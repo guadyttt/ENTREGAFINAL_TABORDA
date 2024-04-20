@@ -1,0 +1,38 @@
+{% extends "padre.html "%}
+{% load static %}
+
+{% block contenido %}
+
+    <header class="masthead" >
+        <div class= "container" style="color:black; opacity: 100">
+            <h1 class="text-center">Buscador</h1>
+            <p></p>
+            <p></p>
+            <h5 class="text-center">Alumnos</h5>
+        </div>
+    </header>
+    <main>
+        <p></p>
+        <p></p>
+        <form action="alumno_resultado"method="GET">
+            <div class="container">
+                <div class="card text-center" >
+                    <div class="card-header" >
+                        <h3>Ingrese el nombre del Alumno</h3>
+                    </div>
+                    <div class="card-body">
+                        <input class="form-control" type="text" name="nombre" id="nombre">
+                        <p></p>
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button class="btn btn-primary" href="">Buscar</button>
+                            <a class="btn btn-outline-primary" href="alumnos">Volver</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+
+
+
+{% endblock %}

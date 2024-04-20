@@ -1,0 +1,49 @@
+{% extends "padre.html "%}
+{% load static %}
+
+{% block contenido %}
+    <header class="masthead" >
+        <div class= "container" style="color:black; opacity: 100">
+            <h1 class="text-center">CURSOS</h1>
+            <p></p>
+            <p></p>
+            <h5 class="text-center">App Coder</h5>
+        </div>
+    </header>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <p>Cursos</p>
+            </div>
+            <div class="card">
+            <table class="table">
+                <div class="card-head">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>nombre</th>
+                            <th>comision</th>
+                        </tr>
+                    </thead>
+                    <div class="card-body">
+                        <tbody>
+                            {% for n in cursos %}
+                            <tr>
+                                <td>{{n.id}}</td>
+                                <td>{{n.nombre}}</td>
+                                <td>{{n.comision}}</td>
+                                <td><a class="btn btn-danger btn-sm"href="{% url 'curso_eliminar' n.id %}">Eliminar</a></td>
+                                <td><a class="btn btn-danger btn-sm"href="{% url 'curso_editar' n.id %}">Editar</a></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </div>
+                </div>
+            </table>
+            </div>
+        </div>
+        <a class="btn btn-primary" href="curso_alta">Nuevo Curso</a>
+        <a class="btn btn-outline-primary" href="curso_buscar">Buscador</a>
+
+    </div>
+{% endblock %}

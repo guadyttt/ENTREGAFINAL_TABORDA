@@ -1,0 +1,14 @@
+{% extends "padre.html "%}
+{% load static %}
+
+{% block contenido %}
+    <head>
+    <title>Redireccionando a curos</title>
+    <meta http-equiv="refresh" content="3"; {% url 'App1/cursos' %}>
+    </head>
+    <header class="masthead">
+        <div class="text-center" style="color: black;">
+            <h1>Curso eliminado correctamente</h1>
+        </div>
+    </header>
+{% endblock %}

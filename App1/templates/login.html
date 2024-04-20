@@ -1,0 +1,35 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block contenido %}
+    <head>
+    <link rel="icon" type="image/x-icon" href="App1/assets/favicon.ico">
+    </head>
+        <header class="masthead">
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6">
+                        <div class="text-center text-white">
+                            <!-- Page heading-->
+                            <h1 class="mb-5">INICIE SESION</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </header>
+
+    <body>
+        <div class="container">
+            <div class="text-center text-black">
+                    <h2>Ingrese sus datos</h2>
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+            </div>
+    </body>
+        
+{% endblock %}

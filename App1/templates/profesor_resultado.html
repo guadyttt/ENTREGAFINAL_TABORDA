@@ -1,0 +1,39 @@
+{% extends "padre.html "%}
+{% load static %}
+
+{% block contenido %}
+    <header class="masthead" >
+        <div class= "container" style="color:black; opacity: 100">
+            <h1 class="text-center">Buscador</h1>
+            <p></p>
+            <p></p>
+            <h5 class="text-center">Profesores</h5>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <p></p>
+            <div class="card">
+                <div class="card-header">
+                    <div class="text-center">
+                        <h2>Resultado</h2>
+                    </div>
+                </div>
+                <div class="card-body">
+                    {% if profesores %}
+                        {% for profesor in profesores  %}
+                            <li>Nombre:{{profesor.nombre}}</li>
+                            <li>Comision:{{profesor.dni}}</li>
+                        {% endfor %}
+                    {% else %}
+                        <p></p>
+                        <p class="text-center">No se encontro ningun profesor </p>
+                    {% endif %}
+                </div>
+            </div>
+            <p></p>
+            <a class="btn btn-outline-primary" href="profesor_buscar">Volver a buscar</a>
+            <a class="btn btn-primary" href="profesores">Ver Profesores</a>
+        </div>
+    </main>
+        {% endblock %}

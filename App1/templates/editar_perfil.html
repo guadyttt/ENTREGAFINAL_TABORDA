@@ -1,0 +1,34 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+ 
+
+{% block contenido %}
+
+    <h2>Editar Perfil {{usuario}}</h2>
+
+ 
+
+    <form action="" method="POST">
+
+        {% csrf_token %}
+
+        <table>
+ 
+            {{miFormulario.as_table}}
+
+        </table>
+
+        <button type="btn" class="btn btn-primary me-md-0" >Enviar</button>
+        <a type="btn" class="btn btn-primary me-md-0" href="{% url 'login' %}">Salir</a>
+
+    </form>
+
+  
+
+  
+
+   
+
+{% endblock %}

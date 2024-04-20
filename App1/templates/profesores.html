@@ -1,0 +1,49 @@
+{% extends "padre.html "%}
+{% load static %}
+
+{% block contenido %}
+    <header class="masthead" >
+        <div class= "container" style="color:black; opacity: 100">
+            <h1 class="text-center">LISTA DE PROFESORES</h1>
+            <p></p>
+            <p></p>
+
+        </div>
+    </header>
+    <div class="container">
+        <p></p>
+        <div class="card">
+            <div class="card-header">
+                <div class="text-center">
+                    <p></p>
+                    <h2>Profesores</h2>
+                </div>
+            </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>nombre</th>
+                                <th>dni</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for n in profesores %}
+                            <tr>
+                                <th>{{n.id}}</th>
+                                <th>{{n.nombre}}</th>
+                                <th>{{n.dni}}</th>
+                                <td><a class="btn btn-danger btn-sm"href="{% url 'profesor_eliminar' n.id %}">Eliminar</a></td>
+                                <td><a class="btn btn-danger btn-sm"href="{% url 'profesor_editar' n.id %}">Editar</a></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+        </div>
+        <a class="btn btn-primary" href="profesor_alta">Nuevo Profesor</a>
+        <a class="btn btn-outline-primary" href="profesor_buscar">Buscador</a>
+
+    </div>
+{% endblock %}

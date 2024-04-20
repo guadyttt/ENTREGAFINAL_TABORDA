@@ -1,0 +1,29 @@
+{% extends "padre.html "%}
+{% load static %}
+
+{% block contenido %}
+    <header class="masthead" >
+        <div class= "container" style="color:black; opacity: 100">
+            <h1 class="text-center">Alta de Profesor</h1>
+        </div>
+    </header>
+    <form action="profesor_alta" method="POST">
+        {% csrf_token %}
+        <div class="container">
+            <div class="form-control">
+                    <h1 class="form-text">Nombre</h1>
+                    <input type="text" class="form-control"name="nombre" aria-describedby required>
+                    <h1 class="form-text">dni:</h1>
+                    <input type="number" class="form-control"name="dni" aria-describedby required>
+                    <p> </p>
+                    <button class="btn btn-primary">Enviar</button>
+                    <a class="btn btn-primary" href="profesores">Ver Profesores</a>
+                    <a class="btn btn-primary" href="profesores">Agregar otro</a>
+                    </div>
+            </div>
+        </div>
+        </div>
+    </form>
+
+
+{% endblock %}

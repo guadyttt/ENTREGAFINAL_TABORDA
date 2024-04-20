@@ -1,0 +1,37 @@
+{% extends "padre.html "%}
+{% load static %}
+
+{% block contenido %}
+    <header class="masthead" >
+        <div class= "container" style="color:black; opacity: 100">
+            <h1 class="text-center">Buscador</h1>
+            <p></p>
+            <p></p>
+            <h5 class="text-center">Cursos</h5>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <p></p>
+            <div class="card">
+                <div class="card-header">
+                    <div class="text-center">
+                        <h2>Resultado</h2>
+                    </div>
+                </div>
+                <div class="card-body">
+                    {% if cursos %}
+                    {% for curso in cursos  %}
+                        <li>Nombre:{{curso.nombre}}</li>
+                        <li>Comision:{{curso.comision}}</li>
+                    {% endfor %}
+                    {% else %}
+                    <p class="text-center">No se encontraron cursos con ese nombre</p>
+                    {% endif %}
+                </div>
+            </div>
+            <a class="btn btn-outline-primary" href="curso_buscar">Volver a buscar</a>
+            <a class="btn btn-primary" href="cursos">Ver Cursos</a>
+        </div>
+    </main>
+        {% endblock %}

@@ -1,0 +1,26 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block contenido %}
+    <header class="masthead">
+        <div class="text-center">
+            <h1>Modificar curso </h1>
+        </div>
+    </header>
+        <main>
+            <div class="container">
+                <div class="text-center">
+                <form action="{% url 'curso_editar' curso.id %} "method="POST">
+                    {% csrf_token %}
+                    <h2>Nuevo nombre</h2>
+                    {{mi_formulario.nombre}}
+                    <p></p>
+                    <h2>Nueva comision</h2>
+                    {{mi_formulario.comision}}
+                    <button>enviar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+{% endblock  %}
